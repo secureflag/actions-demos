@@ -1,0 +1,17 @@
+name: Vulnerability Training Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  security-approval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: secureflag/actions@v1  # Your action repo
+        with:
+          target_repo: ${{ github.repository }}  # Or specify another repo
+          sec_token: ${{ secrets.SEC_TOKEN }}
