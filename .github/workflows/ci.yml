@@ -11,7 +11,9 @@ jobs:
   security-approval:
     runs-on: ubuntu-latest
     steps:
-      - uses: secureflag/actions/.github/actions/vuln_trng_check@v2  # Your action repo
+      - uses: secureflag/actions/.github/actions/vuln_trng_check@v1  # Your action repo
         with:
           target_repo: ${{ github.repository }}  # Or specify another repo
           sec_token: ${{ secrets.SEC_TOKEN }}
+          api_endpoint: ${{ secrets.API_ENDPOINT }}
+          api_token: ${{ secrets.API_TOKEN }}
