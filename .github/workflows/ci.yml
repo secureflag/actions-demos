@@ -2,7 +2,8 @@ name: Vulnerability Training Check
 
 on:
   push:
-    branches: [main]
+    branches:
+      - '**'
 
 jobs:
   security-approval:
