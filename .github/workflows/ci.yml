@@ -3,9 +3,8 @@ name: Vulnerability Training Check
 on:
   push:
     branches:
-      - '**'
-    branches-ignore:
-      - 'main'  # Or your default branch name
+      - '*'
+      - '!main'
 
 jobs:
   security-approval:
