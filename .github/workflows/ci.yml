@@ -2,10 +2,8 @@ name: Vulnerability Training Check
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened, ready_for_review]
+    branches:
+      - '**'
 
 jobs:
   security-approval:
