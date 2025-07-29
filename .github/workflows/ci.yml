@@ -9,6 +9,11 @@ on:
 jobs:
   security-approval:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read      # Needed for actions/checkout
+      pull-requests: read # Needed to fetch PR data (commits, titles, etc.)
+      security-events: read # Needed to query GHSA advisories
+      issues: write      # Needed to post PR comments (if training fails)
     steps:
       - uses: secureflag/actions/.github/actions/advisory_training_check@main
         with:
