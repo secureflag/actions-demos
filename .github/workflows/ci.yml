@@ -10,9 +10,9 @@ jobs:
   security-approval:
     runs-on: ubuntu-latest
     steps:
-      - uses: secureflag/actions/.github/actions/advisory_training_check@main  # Your action repo
+      - uses: secureflag/actions/.github/actions/advisory_training_check@main
         with:
-          target_repo: ${{ github.repository }}  # Or specify another repo
-          sec_token: ${{ secrets.SEC_TOKEN }}
+          target_repo: ${{ github.repository }}
+          sec_token: ${{ secrets.GITHUB_TOKEN }}
           api_endpoint: ${{ secrets.API_ENDPOINT }}
           api_token: ${{ secrets.API_TOKEN }}
