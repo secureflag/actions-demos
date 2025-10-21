@@ -10,7 +10,7 @@ jobs:
   assignments-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: secureflag/actions/.github/actions/assignments_check@main
+      - uses: secureflag/actions/.github/actions/assignments_check@feature/assignments-check
         with:
           target_repo: ${{ github.repository }}
           gh_token: ${{ secrets.SEC_TOKEN }}
