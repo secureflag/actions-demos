@@ -1,0 +1,19 @@
+name: Assignments Completion Check
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+
+jobs:
+  assignments-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: secureflag/actions/.github/actions/assignments_check@main
+        with:
+          target_repo: ${{ github.repository }}
+          gh_token: ${{ secrets.SEC_TOKEN }}
+          api_endpoint: ${{ secrets.API_ENDPOINT }}
+          api_token: ${{ secrets.API_TOKEN }}
+          assignment_check_type: 'completed_pending'
